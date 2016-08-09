@@ -1,0 +1,676 @@
+<!DOCTYPE html>
+<html>
+<head>
+  <title></title>
+  <meta http-equiv="Content-Type" content="text/html; charset=gb2312" />
+  <script type="text/javascript" src="js/jquery-1.7.2.min.js"></script>
+  <script type="text/javascript" src="js/myfocus-2.0.1.min.js"></script><!--引入myFocus库-->
+ 
+
+  <style type="text/css">
+   @charset "utf-8";
+  
+  *{
+    margin: 0;
+    padding: 0;
+    font-size: 12px;
+    font-family: "Microsoft YaHei";
+    list-style-type:none
+  }
+  body{
+
+   
+     background:url("images/bk.jpg");
+	
+
+  }
+  .top{
+    width: 100%;
+    height: 60px;
+  
+     /*opacity:0.1; */
+    /* filter:alpha(opacity=10); background-color:rgba(255, 255, 255, 0.3)不会使子元素透明。*/
+    background-color:rgba(192,192,192, 0.5) 
+
+  
+  
+  }
+  .top-content{
+    width: 1100px;
+    height: 60px;
+    margin: 0 auto;
+  }
+  .logo{
+    float:left;
+    background: url("images/logo.png");
+     background-repeat:no-repeat;
+     background-size:100% 100%;
+     height: 45px;
+     width: 200px;
+     margin-top: 8px;
+  }
+  
+  #nav{ position:relative; 
+    width:600px; 
+    margin:0 auto 0 auto; 
+    border-bottom:2px #ddd solid; 
+    float: left;
+    margin-left: 30px;  
+  }
+  #nav .nav-menu{ height:50px;}
+  #nav .nav-menu a{ display:block; float:left; height:50px; padding:0 20px; line-height:50px; color:#000; font-size:16px; text-decoration:none;}
+  #nav .nav-current{ position:absolute; bottom:-2px; height:2px; overflow:hidden; background:#80b600;}
+  .search{
+    float:right;
+    position: relative;
+    
+
+  }
+   .search_text {
+  width: 190px;
+  position: absolute;
+  right: 10px;
+  height: 30px;
+  margin-top: 15px;
+  background: url(images/search.jpg) no-repeat right center;
+  background-color: #FFF;
+  border: 1px solid #FFF;
+  padding-right: 25px;}
+  .slider{
+    width: 1100px;
+    height: 410px;
+    margin: 0 auto;
+  }
+
+
+  
+/* side */
+.side{position:fixed;
+  width:54px;
+  height:275px;
+  right:0;
+  top:214px;
+  z-index:100;}
+
+.side ul li{width:54px;
+  height:54px;
+  float:left;
+  position:relative;
+  border-bottom:1px solid #444;}
+
+.side ul li .sidebox{position:absolute;
+  width:54px;
+  height:54px;
+  top:0;
+  right:0;
+  transition:all 0.3s;
+  background:#000;
+  opacity:0.8;
+  filter:Alpha(opacity=80);
+  color:#fff;
+  font:14px/54px "微软雅黑";
+  overflow:hidden;}
+
+.side ul li .sidetop{width:54px;
+  height:54px;
+  line-height:54px;
+  display:inline-block;
+  background:#000;
+  opacity:0.8;
+  filter:Alpha(opacity=80);
+  transition:all 0.3s;}
+
+.side ul li .sidetop:hover{background:#000;
+  opacity:0.4;
+  filter:Alpha(opacity=0.4);
+}
+
+.side ul li img{float:left;}
+
+
+
+
+
+.main{
+
+  width: 1100px;
+  
+  margin: 0 auto;
+overflow: hidden;
+
+}
+
+.news{
+  width: 400px;
+  overflow: hidden;
+  margin-top: 5px;
+  float:left;
+  height: 300px;
+  border: 1px solid  #ccc;
+background: #DCDCDC;
+
+}
+.title{
+  background: #ccc;
+  height: 40px;
+
+
+
+}
+.title_left{
+  
+float: left;
+  width: 60%;
+  padding-left: 20px;
+  font-size: 17px;
+  line-height: 40px;
+}
+
+.title_right {
+  width: 20%;
+  float: right;
+  text-align: right;
+  line-height: 40px;
+}
+
+.title_right a {
+  color: #999;
+  text-decoration: none;
+  font-family: "宋体";
+  font-size: 15px;
+  font-weight: normal;
+  padding-right: 10px;}
+
+  .pic_news {
+  height: 100px;
+  margin-top: 10px;
+  line-height: 22px;
+  margin-left: 10px;
+  overflow: hidden ;
+}
+.pic_news img {
+  float: left;
+  margin: 0 5px;
+}
+.pic_news .detail{
+   float: left ;
+   margin-left: 30px;
+   width: 220px;
+
+
+}
+.pic_news .detail a {
+  color: #C00;
+  text-decoration: none;
+}
+.red {
+  color: #C00;
+  font-weight: bold;
+}
+.news_list {
+  /*height:90px;*/
+  margin-top: 10px;
+}
+.news_list li {
+  background: url(./images/arrows.png) no-repeat;
+  list-style-type: none;
+  padding-left: 10px;
+  margin: 8px;
+  border-bottom: 1px dotted #CCC;
+  height: 17px;
+  line-height: 17px;
+}
+.news_list span {
+  float: right;
+  color: #999;
+}
+.news_list a:link, .news_list a:visited {
+  text-decoration: none;
+  color: #000;
+}
+.news_list a:hover, .news_list a:active {
+  color: #F00;
+  text-decoration: none;
+}
+
+
+
+.affair{    font-family:'微软雅黑';width: 400px;
+  overflow: hidden;
+  margin-top: 5px;
+  float:left;
+  height: 300px;
+  margin-left: 10px;
+   border: 1px solid  #ccc;
+   background: #DCDCDC;
+
+}
+.affair .tab{ overflow:hidden; background:#ccc;line-height: 40px;height: 40px; font-size:17px;}
+.affair .tab a{ display:block; padding: 0px 20px; float:left; text-decoration:none; color:#333; font-size:17px;}
+.affair .tab a:hover{ background:#969696; color:#fff; text-decoration:none;}
+.affair .tab a.on{ background:#969696; color:#fff; text-decoration:none;}
+.affair .content{ overflow:hidden; padding:10px;}
+.affair .content div li{ display:none;height: 30px;}
+.affair .content div li span{ font-size: 15px; float:right;}
+.affair .content div li a{ font-size: 15px; float: left; text-decoration: none; color: black;}
+ 
+.affair .content div li a:hover{ color: red;}
+ .media{
+  margin-left: 10px;
+  float: left;
+  height: 300px;
+  margin-top: 5px;
+  width: 274px;
+  overflow: hidden;
+   border: 1px solid  #ccc;
+   background: #DCDCDC;
+
+ }
+ .video_content{
+  height: 150px;
+  margin:0px auto;
+  padding-top: 10px;
+  width: 250px;
+ }
+ .embed{
+ padding-left: 15px
+
+ }
+.service{
+  padding-top: 10px;
+  text-align: center;
+
+}
+.service img{
+  height: 80px;
+  width: 220px;
+
+}
+
+
+.copyright {
+
+  width: 100%;
+  height: 250px;
+   background-color:rgba(0, 0, 0, 0.5) ;
+  margin-top: 5px;
+  overflow: hidden;/*让父div被撑开*/
+
+}
+.copyright_content {
+  width: 1100px;
+  height: 180px;
+  margin: 0 auto;
+  padding-top: 20px;
+}
+.copyright_content li {
+  list-style-type: none;
+  float: left;
+  width: 200px;
+  text-align: center;
+  background: url("images/1.jpg") no-repeat right center ;
+  font-size: 18px;
+  font-family: "微软雅黑";
+  line-height: 30px;
+  color: #fff;
+
+}
+.copyright_content li ul li {
+  font-size: 14px;}
+.copyright_content li ul li a{
+   color: #fff;
+   text-decoration: none;
+  }
+
+
+.copyright_content li ul li a:hover{
+   color: #999;
+   text-decoration: none;
+  }
+
+
+  .footer{
+    height: 30px;
+    padding-top: 5px;
+    border-top: 2px solid #999;
+    width: 1100px;
+    text-align: center;
+    line-height:40px;
+    font-size: 15px;
+    margin: 0 auto;
+    color: #fff;
+  }
+  
+
+
+
+
+  </style>
+
+
+</head>
+<body>
+
+<div class="top">
+    <div class="top-content">
+       <div class="logo">  
+       </div><!-- logo结束 -->
+       <div class="nav" id="nav">
+          <div class="nav-menu">
+            <a href="#" class="current">首页</a>
+            <a href="#">学校概况</a>
+            <a href="#">院系设置</a>
+            <a href="#">学科建设</a>
+            <a href="#">人才培养</a>
+            <a href="#">科学研究</a>
+          </div>
+          <div class="nav-current"></div>
+       </div><!--导航结束  -->
+       <div class="search">
+          <form action="" method="post">
+          <input type="text" class="search_text" />
+          </form>
+       </div><!--搜索结束  -->
+    </div>
+</div><!-- 头部结束 -->
+
+<!-- 轮播开始 -->
+<div class="slider">
+    <div id="boxID"><!--焦点图盒子-->
+      <div class="loading"><img src="images/loading.gif" alt="请稍候..." /></div><!--载入画面(可删除)-->
+      <div class="pic"><!--内容列表(li数目可随意增减)-->
+        <ul>
+        <li><a href="#"><img src="images/1a.jpg"  width="1100px"  height="410px" thumb="" alt="落英" text="春天来了，樱花盛开" /></a></li>
+        <li><a href="#"><img src="images/2a.jpg" width="1100px"  height="410px" thumb="" alt="静谧" text="" /></a></li>
+        <li><a href="#"><img src="images/3a.jpg" width="1100px"  height="410px" thumb="" alt="盛夏" text="" /></a></li>
+        <li><a href="#"><img src="images/4a.jpg" width="1100px"  height="410px"  thumb="" alt="初秋" text="" /></a></li>
+        <li><a href="#"><img src="images/5a.jpg"  width="1100px"  height="410px" thumb="" alt="冬阳" text="" /></a></li>
+        </ul>
+      </div>
+    </div>
+</div><!-- 轮播结束 -->
+
+<div class="main">
+ 
+      <div class="news">
+        <div class="title">
+          <h2 class="title_left">新闻中心</h2>
+          <span class="title_right"><a href="#">More&gt;&gt;</a></span> 
+          </div>
+        <!--title结束-->
+        
+        <div class="pic_news"> <img src="images/news.jpg" alt="520 慕女神喊你来表白" width="113" height="77" />
+        <div class="detail">
+          <h2><a href="news.html">吴刚副市长视察我校招生录取工作</a></h2>
+          <p>7月19日下午，我市一本批次录取工作正式展开,副市长吴刚一行专程来到我....<br />
+            <a href="news.html">Learn More>></a></p></div>
+        </div>
+        <!--pic_news结束-->
+        
+        <div class="news_list">
+          <ul>
+            <li><span>2014-06-01</span> <a href="news.html">学校组织开展暑期“三下乡”社...</a></li>
+            <li><span>2014-06-01</span> <a href="news.html">学校组织开展暑期“三下乡”社...</a></li>
+            <li><span>2014-06-01</span> <a href="news.html">学校组织开展暑期“三下乡”社...</a></li>
+            <li><span>2014-06-01</span> <a href="news.html">学校组织开展暑期“三下乡”社...</a></li>
+            <li><span>2014-06-01</span> <a href="news.html">学校组织开展暑期“三下乡”社...</a></li>
+
+
+          </ul>
+        </div>
+        <!--news_list结束--> 
+        
+      </div>  <!--news结束-->
+
+<!-- 中间tab选项卡 -->
+      <div class="affair">
+             <div class="tab">
+             <a href="javascript:;" class="on">学术讲座</a>
+            <a href="javascript:;">招标信息</a>
+           <a href="javascript:;">校务公告</a>
+      
+     </div>
+    <div class="content">
+      
+            <div >
+            <li style="display:block;"><span>2014-06-01</span> <a href="news.html">中国科学院自动化研究所蒋田仔...</a></li>
+            <li style="display:block;"><span>2014-06-01</span> <a href="news.html">中国科学院自动化研究所蒋田仔...</a></li>
+            <li style="display:block;"><span>2014-06-01</span> <a href="news.html">中国科学院自动化研究所蒋田仔...</a></li>
+            <li style="display:block;"><span>2014-06-01</span> <a href="news.html">中国科学院自动化研究所蒋田仔...</a></li>
+            <li style="display:block;"><span>2014-06-01</span> <a href="news.html">中国科学院自动化研究所蒋田仔...</a></li>
+            <li style="display:block;"><span>2014-06-01</span> <a href="news.html">中国科学院自动化研究所蒋田仔...</a></li>
+            <li style="display:block;"><span>2014-06-01</span> <a href="news.html">中国科学院自动化研究所蒋田仔...</a></li>
+            <li style="display:block;"><span>2014-06-01</span> <a href="news.html">中国科学院自动化研究所蒋田仔...</a></li>
+           
+
+            
+             </div>
+
+            <div>
+            <li><span>2014-06-01</span> <a href="news.html">重庆邮电大学图书射频智能管理系统...</a></li>
+            <li><span>2014-06-01</span> <a href="news.html">重庆邮电大学图书射频智能管理系统...</a></li>
+            <li><span>2014-06-01</span> <a href="news.html">重庆邮电大学图书射频智能管理系统...</a></li>
+            <li><span>2014-06-01</span> <a href="news.html">重庆邮电大学图书射频智能管理系统...</a></li>
+            <li><span>2014-06-01</span> <a href="news.html">重庆邮电大学图书射频智能管理系统...</a></li>
+            <li><span>2014-06-01</span> <a href="news.html">重庆邮电大学图书射频智能管理系统...</a></li>
+            <li><span>2014-06-01</span> <a href="news.html">重庆邮电大学图书射频智能管理系统...</a></li>
+            <li><span>2014-06-01</span> <a href="news.html">重庆邮电大学图书射频智能管理系统...</a></li>
+
+          
+             </div>
+
+
+             <div>
+         
+            <li><span>2014-06-01</span><a href="news.html">关于2016年暑假放假及下学期开学工作...</a></li>
+            <li><span>2014-06-01</span><a href="news.html">关于2016年暑假放假及下学期开学工作...</a></li>
+            <li><span>2014-06-01</span><a href="news.html">关于2016年暑假放假及下学期开学工作...</a></li>
+            <li><span>2014-06-01</span><a href="news.html">关于2016年暑假放假及下学期开学工作...</a></li>
+            <li><span>2014-06-01</span><a href="news.html">关于2016年暑假放假及下学期开学工作...</a></li>
+            <li><span>2014-06-01</span><a href="news.html">关于2016年暑假放假及下学期开学工作...</a></li>
+            <li><span>2014-06-01</span><a href="news.html">关于2016年暑假放假及下学期开学工作...</a></li>
+            <li><span>2014-06-01</span><a href="news.html">关于2016年暑假放假及下学期开学工作...</a></li>
+           
+
+             </div>
+          
+          
+            
+ 
+    </div>
+</div>
+<!-- tab end -->
+
+<!-- 右侧视频 -->
+
+ <div class="media">
+      <div class="video">
+        <div class="title">
+          <h2 class="title_left">媒体聚焦</h2>
+          <span class="title_right"><a href="#">More&gt;&gt;</a></span> </div>
+        <!--title结束-->
+        <p class="video_content">
+          <embed  class="embed"   src="http://player.youku.com/player.php/sid/XNjkzMDE5MTUy/v.swf" allowFullScreen="true" quality="high" width="220" height="140" align="middle" allowScriptAccess="always" type="application/x-shockwave-flash"></embed>
+        </p>
+      </div>
+      <!--video结束-->
+      
+      <div class="service"><a href="#"><img src="images/biye.png" /></a>  </div>
+    </div><!-- media end -->
+
+</div>
+
+
+<div class="copyright">
+  <div class="copyright_content">
+    <ul>
+      <li>信息
+        <ul>
+          <li><a href="#">信息公开</a></li>
+           <li><a href="#">信息门户</a></li>
+                      <li><a href="#">教务在线</a></li> 
+           <li><a href="#">研究生在线</a></li> 
+ 
+        </ul>
+      </li>
+      <li>机构
+        <ul>
+                     <li><a href="#">图书馆</a></li> 
+           <li><a href="#">科研平台</a></li> 
+           <li><a href="#">学术期刊</a></li> 
+           <li><a href="#">悠悠黄桷兰</a></li> 
+
+        </ul>
+      </li>
+      <li>部门
+        <ul>
+          <li><a href="#">红岩网校</a></li> 
+           <li><a href="#">校董会</a></li> 
+           <li><a href="#">基金会</a></li> 
+           <li><a href="#">校友联谊会</a></li> 
+
+        </ul>
+      </li>
+      <li>服务
+        <ul>
+                     <li><a href="#">后勤服务</a></li> 
+           <li><a href="#">邮件系统</a></li> 
+           <li><a href="#">招贤纳士</a></li> 
+           <li><a href="#">校长信箱</a></li> 
+
+        </ul>
+      </li>
+      <li><img src="images/weixin.png" alt="微信关注" width="30" height="27" /> 微信关注
+        <ul>
+          <li><img src="images/qrcode.jpg" alt="扫描关注慕课网官方微信" width="102" height="102" /></li>
+        </ul>
+      </li>
+    </ul>
+  </div>
+
+  <div class="footer">
+  <span>版权所有 | 重庆邮电大学 | 重庆市南岸区崇文路2号 | 400065 | 渝ICP：10005091-2 | made by liujun </span> 
+
+  </div>
+  </div>
+
+  <!--copyright_content结束--> 
+
+<!-- 侧边栏开始 -->
+<div class="side">
+  <ul>
+    <li><a href="#"><div class="sidebox"><img src="images/side_icon01.png">想加入重邮？</div></a></li>
+    <li><a href="#"><div class="sidebox"><img src="images/side_icon02.png">领略校园文化</div></a></li>
+    <li><a href="javascript:void(0);" ><div class="sidebox"><img src="images/side_icon03.png">关注新浪微博</div></a></li>
+    <li style="border:none;"><a href="javascript:goTop();" class="sidetop"><img src="images/side_icon05.png"></a></li>
+  </ul>
+</div><!-- 侧边栏结束 -->
+
+
+
+<!-- 导航 -->
+<script type="text/javascript">
+    $(function(){
+
+    (function(){
+      var $navcur = $(".nav-current");
+      var $nav = $("#nav");
+      var current = ".current";
+      var itemW = $nav.find(current).innerWidth();  //默认当前位置宽度
+      var defLeftW = $nav.find(current).position().left;  //默认当前位置Left值
+
+      //添加默认下划线
+      $navcur.width(itemW);
+
+      //hover事件
+      $nav.find("a").hover(function(){
+      var index = $(this).index();  //获取滑过元素索引值
+      var leftW = $(this).position().left;  //获取滑过元素Left值
+      var currentW = $nav.find("a").eq(index).innerWidth(); //获取滑过元素Width值
+      $navcur.stop().animate({
+         left: leftW,
+         width: currentW
+        },300);},function(){
+     $navcur.stop().animate({
+        left: defLeftW,
+        width: itemW
+        },300)
+        })
+          })(); 
+
+});
+</script>
+
+
+
+
+<!-- 轮播图jquery代码 -->
+<script type="text/javascript">
+myFocus.set({
+    id:'boxID',//焦点图盒子ID
+    pattern:'mF_kdui',//风格应用的名称
+    time:3,//切换时间间隔(秒)
+   
+    width:1100,//设置图片区域宽度(像素)
+    height:410,//设置图片区域高度(像素)
+    txtHeight:'default'//文字层高度设置(像素),'default'为默认高度，0为隐藏
+});
+</script>
+
+
+<!-- 侧边栏代码 -->
+<script type="text/javascript">
+$(document).ready(function(){
+
+  $(".side ul li").hover(function(){
+    $(this).find(".sidebox").stop().animate({"width":"150px"},250);
+  },function(){
+    $(this).find(".sidebox").stop().animate({"width":"54px"},250);
+  });
+  
+});
+
+//回到顶部
+function goTop(){
+  $('html,body').animate({'scrollTop':0},600);
+}
+</script>
+
+
+
+<!-- tab -->
+<script>
+$(function(){
+  $(".affair .tab a").mouseover(function(){
+    $(this).addClass('on').siblings().removeClass('on');
+    var index = $(this).index();
+    number = index;
+    $('.affair .content div li').hide();
+    $('.affair .content div:eq('+index+') li').show();
+  });
+  
+  var auto = 1;  //等于1则自动切换，其他任意数字则不自动切换
+  if(auto ==1){
+    var number = 0;
+    var maxNumber = $('.affair .tab a').length;
+    function autotab(){
+      number++;
+      number == maxNumber? number = 0 : number;
+      $('.affair .tab a:eq('+number+')').addClass('on').siblings().removeClass('on');
+      $('.affair .content div:eq('+number+') li').show();
+      $('.affair .content div:eq('+number+')').siblings().children("li").hide();
+    }
+    var tabChange = setInterval(autotab,3000);
+    //鼠标悬停暂停切换
+    $('.affair').mouseover(function(){
+      clearInterval(tabChange);
+    });
+    $('.affair').mouseout(function(){
+      tabChange = setInterval(autotab,3000);
+    });
+    }
+});
+</script>
+
+</body>
+</html>
